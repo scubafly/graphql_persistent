@@ -52,18 +52,8 @@ class GraphQlPersistentController implements ContainerInjectionInterface {
    * @return JsonResponse
    *   JSON object.
    */
-  public function getUserOne() {
+  public function getUser() {
     return $this->graphQlQueryProcessor->processQueryFromFile('user.gql');
-  }
-
-  /**
-   * GetStoryFragments call.
-   *
-   * @return JsonResponse
-   *   JSON object.
-   */
-  public function getStoryFragments() {
-    return $this->graphQlQueryProcessor->processQueryFromFile('story_fragment_query.gql');
   }
 
 }
