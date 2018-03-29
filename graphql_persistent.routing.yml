@@ -1,11 +1,4 @@
-graphql.get_story_fragments:
-  path: 'v1/GetStoryFragments'
-  defaults:
-    _controller: '\Drupal\graphql_persistent\Controller\GraphQlPersistentController::getStoryFragments'
-  requirements:
-    _permission: 'access content'
-
-graphql.get_user:
+graphql_persistent.get_user:
   path: 'v1/User'
   defaults:
     _controller: '\Drupal\graphql_persistent\Controller\GraphQlPersistentController::getUser'
