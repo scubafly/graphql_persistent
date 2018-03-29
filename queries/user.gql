@@ -1,5 +1,5 @@
 query {
-    userById(id: "1", language: en) {
+    userById(id: "1") {
         name
     }
 }
