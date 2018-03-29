@@ -1,0 +1,7 @@
+name: GraphQL persistant query endpoints
+type: module
+description: 'Exposes a custom GraphQL Schema'
+package: GraphQL
+core: 8.x
+dependencies:
+  - graphql_core
