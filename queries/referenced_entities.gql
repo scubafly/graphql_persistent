@@ -1,0 +1,50 @@
+query getStoryFragments(
+  $id: String = "2747",
+  $status: [String] = "0",
+) {
+    stories: nodeQuery(
+        filter: {
+            conditions:
+            [
+                {
+                  field: "nid",
+                  value: [$id]
+                },
+                {
+                  field: "status",
+                  value: $status
+                },
+                {
+                  field: "type",
+                  value: "story"
+                }
+            ]
+        }
+    ) {
+        story: entities {
+            ... on NodeStory {
+              status
+              title
+              entityId
+              queryFieldStoryFragments(
+                filter: {
+                  conditions:
+                  [
+                    {
+                      field: "status",
+                      value: $status
+                    }
+                  ]
+              }) {
+                entities {
+                  entityLabel
+                  entityId
+									... on NodeStoryfragment {
+                    status
+                  }
+                }
+              }
+            }
+        }
+    }
+}
